@@ -1,12 +1,8 @@
-<div align="center" style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;font-weight:bold">
-<p style="font-size:30px;margin:0;padding:0">
-Atividade Prática Supervisionada
-</p>
-<p style="font-size:14px;margin:0 0 5px 0;padding:0;">
-Banco de Dados II
-</p>
+<div align="center">
+
+### Banco de Dados II
+# Atividade Prática Supervisionada 
+
 </div>
 
 <div style="margin-top:15px;text-align: justify;border-bottom:1px;
@@ -32,74 +28,50 @@ O sistema de agendamento terá as seguintes funcionalidades previstas:
 
 </div>
 
-<div style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;padding-top:10px;padding-bottom:10px">
-<p style="font-size:20px;font-weight:bold">
-Diagrama Entidade e Relacionamento
-</p>
+<div >
+
+## Diagrama Entidade e Relacionamento
 
 </div>
 
-<div style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;padding-top:10px;padding-bottom:10px">
-<p style="font-size:20px;font-weight:bold">
-Modelo Lógico
-</p>
+<div >
+
+## Modelo Lógico
 
 </div>
 
-<div style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;padding-top:10px;padding-bottom:10px">
-<p style="font-size:20px;font-weight:bold">
-Scripts de criação
-</p>
+<div >
+
+## Scripts de criação
 
 </div>
 
-<div style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;padding-top:10px;padding-bottom:10px">
-<p style="font-size:20px;font-weight:bold">
-População da tabela
-</p>
+<div >
+
+## População da tabela
 
 </div>
 
-<div style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;padding-top:10px;padding-bottom:10px">
-<p style="font-size:20px;font-weight:bold">
-Indexação
-</p>
+<div >
+
+## Indexação
 
 </div>
 
-<div style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;padding-top:10px;padding-bottom:10px">
-<p style="font-size:20px;font-weight:bold">
-Funções
-</p>
+<div>
+
+## Funções
 
 </div>
 
-<div style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;padding-top:10px;padding-bottom:10px">
-<p style="font-size:20px;font-weight:bold">
-Views
-</p>
+<div>
+
+## Views
 
 </div>
 
-<div style="border-bottom:1px;
-  border-bottom-style: solid;
-  border-bottom-color: darkgrey;padding-top:10px;padding-bottom:10px">
-<p style="font-size:20px;font-weight:bold">
-Triggers
-</p>
+<div >
+
+## Triggers
 
 </div>
