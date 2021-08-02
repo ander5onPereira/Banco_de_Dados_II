@@ -33,7 +33,7 @@ O sistema de agendamento terá as seguintes funcionalidades previstas:
 ## Diagrama Entidade e Relacionamento
 
 <h1 align="center">
-  <img alt="DER" title="DER" src=".github/Banco_Dados_II_DER.png" width=50%/>
+  <img alt="DER" title="DER" src=".github/Banco_Dados_II_DER-V3.png" width=50%/>
 </h1>
 
 </div>
@@ -46,7 +46,7 @@ O sistema de agendamento terá as seguintes funcionalidades previstas:
 ## Modelo Lógico
 
 <h1 align="center">
-  <img alt="ModLogico" title="ModLogico" src=".github/Banco_Dados_II_Logico.png" width=50%/>
+  <img alt="ModLogico" title="ModLogico" src=".github/Banco_Dados_Agendamento_Logico.png" width=50%/>
 </h1>
 </div>
 
