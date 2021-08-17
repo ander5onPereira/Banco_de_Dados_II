@@ -10,15 +10,15 @@
   border-bottom-color: darkgrey;">
 <p>
 Atividade realizada como parte da avaliação da disciplina de Banco de Dados II, com objetivo de aplicar o conhecimento demonstrado durante as aulas.
-Os exercicios propostos estão apresentados no arquivo <a href='/Atividade_Indexes.pdf'>Atividade_Indexes</a>.
+Os exercicios propostos estão apresentados no arquivo <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/blob/93d38b47f35d4ae91f836e70c493574ed562a01a/trabalho_indexacao/Atividade_Indexes.pdf'>Atividade_Indexes</a>.
 </p>
 
 ### Arquivos costantes nesse atividade
 
-- <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/Atividade_Indexes.pdf'>tb_aluno</a> : sql para povoar tabela aluno
-- <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/Atividade_Indexes.pdf'>tb_discip</a> : sql para povoar tabela discip
-- <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/Atividade_Indexes.pdf'>tb_discip_update</a> : sql para atualizar campos de 'siglaprereq' 
-- <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/Atividade_Indexes.pdf'>tb_matricula</a> : sql para povoar tabela matricula
+- <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/blob/93d38b47f35d4ae91f836e70c493574ed562a01a/trabalho_indexacao/tb_aluno.sql'>tb_aluno</a> : sql para povoar tabela aluno
+- <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/blob/93d38b47f35d4ae91f836e70c493574ed562a01a/trabalho_indexacao/tb_discip.sql'>tb_discip</a> : sql para povoar tabela discip
+- <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/blob/93d38b47f35d4ae91f836e70c493574ed562a01a/trabalho_indexacao/tb_discip_update.sql'>tb_discip_update</a> : sql para atualizar campos de 'siglaprereq' 
+- <a href='https://github.com/ander5onPereira/Banco_de_Dados_II/blob/93d38b47f35d4ae91f836e70c493574ed562a01a/trabalho_indexacao/tb_matricula.sql'>tb_matricula</a> : sql para povoar tabela matricula
 
 </div>
 
