@@ -1,3 +1,4 @@
+
 -- CRIANDO TABLE LOGIN --
 CREATE TABLE login (
 	email VARCHAR(50) NOT NULL,
@@ -23,7 +24,7 @@ CREATE TABLE cliente (
 	cpf VARCHAR(11) NOT NULL,
 	nome VARCHAR(20) NOT NULL,
 	sobrenome VARCHAR(100),
-	--telefone*,
+	telefone text[],
 	fk_login VARCHAR references login(email),
 	fk_endereco BIGINT references endereco(id_endereco),
 	constraint pk_cpf primary key(cpf)	
@@ -35,7 +36,7 @@ CREATE TABLE empresa (
 	email VARCHAR(50) NOT NULL,
 	nome VARCHAR(50) NOT NULL,
 	razao_social VARCHAR(50) NOT NULL,
-	--telefone*,
+	telefone text[],
 	fk_login VARCHAR references login(email),
 	fk_endereco BIGINT references endereco(id_endereco),
 	constraint pk_cnpj primary key(cnpj)
