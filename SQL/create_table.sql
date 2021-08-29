@@ -42,16 +42,6 @@ CREATE TABLE empresa (
 	constraint pk_cnpj primary key(cnpj)
 );
 
--- CRIANDO TABLE AGENDA --
-CREATE TABLE agenda (
-	id_agenda BIGSERIAL NOT NULL,
-	data timestamp with time zone NOT NULL,
-	fk_cliente VARCHAR references cliente(cpf),
-	fk_empresa VARCHAR references empresa(cnpj),
-	constraint pk_agenda primary key(id_agenda, data)
-);
-
-
 -- CRIANDO TABLE SERVICO --
 CREATE TABLE servico (
 	id_servico BIGSERIAL NOT NULL,
@@ -60,4 +50,14 @@ CREATE TABLE servico (
 	descricao TEXT,
 	fk_empresa VARCHAR references empresa(cnpj),
 	constraint pk_servico primary key(id_servico)
+);
+
+-- CRIANDO TABLE AGENDA --
+CREATE TABLE agenda (
+	id_agenda BIGSERIAL NOT NULL,
+	data timestamp with time zone NOT NULL,
+	fk_cliente VARCHAR references cliente(cpf),
+	fk_empresa VARCHAR references empresa(cnpj),
+	fk_servico BIGINT references servico(id_servico),
+	constraint pk_agenda primary key(id_agenda, data)
 );

@@ -75,7 +75,6 @@ end;
 $$ language plpgsql;
 --select random_nome(5)
 
-
 --Email aleatorio 
 Create or replace function email_random() returns text as
 $$
@@ -156,11 +155,6 @@ declare
 end $$ 
 language plpgsql;
 
-TABLEin;
-table cliente;
-table endereco;			
-
-
 -- Inserir Empresa
 do $$
 declare
@@ -190,11 +184,6 @@ declare
 end $$ 
 language plpgsql;
 
-table login;
-table empresa;
-
-
-
 -- Inserir Servico
 do $$
 declare
@@ -217,11 +206,6 @@ declare
 end $$ 
 language plpgsql;
 
-TABLE login;
-TABLE empresa;
-TABLE Servico;
-
-
 -- Inserir Agenda
 do $$
 declare
@@ -230,9 +214,10 @@ declare
 	aux_count INTEGER;
 	aux_cpf BIGINT;
 	aux_cnpj BIGINT;
+	aux_servico BIGINT;
 	
 	begin
-		for i in 1..1200 loop
+		for i in 1..5000 loop
 			aux_nome := servico_random();
 			aux_desc := random_nome(numero(1) + 40);
 			
@@ -242,16 +227,17 @@ declare
 			aux_count := COUNT(*) FROM empresa;
 			aux_cnpj := cnpj FROM empresa OFFSET floor(random()*aux_count) LIMIT 1;
 			
-			INSERT INTO Agenda (data, fk_cliente, fk_empresa)
-			VALUES (data(), aux_cpf, aux_cnpj);
+			aux_count := COUNT(*) FROM servico;
+			aux_servico := id_servico FROM servico OFFSET floor(random()*aux_count) LIMIT 1;
+			
+			INSERT INTO Agenda (data, fk_cliente, fk_empresa, fk_servico)
+			VALUES (data(), aux_cpf, aux_cnpj, aux_servico);
 		end loop;
 end $$ 
 language plpgsql;
 
-TABLE Agenda;
 
-
--- 
+-- Visualizar tabelas
 TABLE login;
 TABLE cliente;
 TABLE servico;
