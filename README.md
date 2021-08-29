@@ -50,37 +50,51 @@ O sistema de agendamento terá as seguintes funcionalidades previstas:
 </h1>
 </div>
 
-<div >
+<div style="margin-top:15px;text-align: justify;border-bottom:1px;
+  border-bottom-style: solid;
+  border-bottom-color: darkgrey;">
 
-## Scripts de criação
+## 📜 Scripts de criação
 
+<a href='https://github.com/ander5onPereira/Banco_de_Dados_II/blob/ae36063e8ffb533a80a1a4dff62b580e0592ed98/SQL/create_table.sql'>create_table</a> : sql para criar tabelas
 </div>
 
-<div >
+<div style="margin-top:15px;text-align: justify;border-bottom:1px;
+  border-bottom-style: solid;
+  border-bottom-color: darkgrey;">
 
-## População da tabela
+## 👨‍👩‍👦 População da tabela
 
+<a href='https://github.com/ander5onPereira/Banco_de_Dados_II/blob/ae36063e8ffb533a80a1a4dff62b580e0592ed98/SQL/populate.sql'>populate</a> : sql para popular as tabelas
 </div>
 
-<div >
+<div style="margin-top:15px;text-align: justify;border-bottom:1px;
+  border-bottom-style: solid;
+  border-bottom-color: darkgrey;">
 
 ## Indexação
 
 </div>
 
-<div>
+<div style="margin-top:15px;text-align: justify;border-bottom:1px;
+  border-bottom-style: solid;
+  border-bottom-color: darkgrey;">
 
 ## Funções
 
 </div>
 
-<div>
+<div style="margin-top:15px;text-align: justify;border-bottom:1px;
+  border-bottom-style: solid;
+  border-bottom-color: darkgrey;">
 
 ## Views
 
 </div>
 
-<div >
+<div style="margin-top:15px;text-align: justify;border-bottom:1px;
+  border-bottom-style: solid;
+  border-bottom-color: darkgrey;">
 
 ## Triggers
 
