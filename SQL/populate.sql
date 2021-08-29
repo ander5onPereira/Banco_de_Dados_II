@@ -1,4 +1,4 @@
--- %%%%%%%%%%%%%%%%%%%%%% FUNCOES UTEIS %%%%%%%%%%%%%%%
+-- %%%%%%%%%%%%%%%%%%%%%%%%% FUNCOES UTEIS %%%%%%%%%%%%%%%%%%%%%%%%%
 
 --Numero aleatorio (Quantidade max de digitos por parametro)
 create or replace function numero_big(digitos integer) returns BIGINT as
@@ -111,13 +111,13 @@ end;
 $$ language plpgsql;
 -- select servico_random();
 
-
+-- %%%%%%%%%%%%%%%%%%%%%%%%% POPULAR AS TABELAS %%%%%%%%%%%%%%%%%%%%%%%%%
 -- Inserir Endereco
 do $$
 declare
 	aux_numero INTEGER;
 	begin
-		for i in 1..2 loop
+		for i in 1..2000 loop
 			aux_numero := trunc(random() * 14 + 1);
 			INSERT INTO endereco (cep, pais, estado, cidade, bairro, rua, complemento, numero)
 			VALUES ( numero(8), pais_random(), random_nome(2), random_nome(aux_numero), 
@@ -126,7 +126,6 @@ declare
 		end loop;
 end $$ 
 language plpgsql;
-
 
 -- Inserir Login e Cliente
 do $$
@@ -138,33 +137,28 @@ declare
 	aux_endereco BIGINT;
 	
 	begin
-		for i in 1..2 loop
+		for i in 1..2000 loop
 			aux_nome := random_nome(numero(1) + 2);
 			aux_email := aux_nome||email_random();
 			aux_count := COUNT(*) FROM endereco;
 			aux_endereco := id_endereco FROM endereco OFFSET floor(random()*aux_count) LIMIT 1;
 			
 			INSERT INTO Login (email, senha, permissao)
-			VALUES ( aux_email, texto(numero(1)), numero(2))
+			VALUES ( aux_email, texto(numero(1) + 4), numero(2))
 			ON CONFLICT (email) DO NOTHING;
 			
 			
 			
 			INSERT INTO cliente (cpf, nome, sobrenome, telefone, fk_login, fk_endereco)
 			VALUES (numero_big(11), aux_nome, random_nome(numero(1)), ARRAY[numero(9)], aux_email, aux_endereco)
-			
---			INSERT INTO cliente (cpf, nome, sobrenome, fk_login, fk_endereco)
---			VALUES (numero_big(11), aux_nome, random_nome(numero(1)), aux_email, aux_endereco)
 			ON CONFLICT (cpf) DO NOTHING;
 		end loop;
 end $$ 
 language plpgsql;
- 
-			
-table login;
+
+TABLEin;
 table cliente;
 table endereco;			
-
 
 
 -- Inserir Empresa
@@ -178,7 +172,7 @@ declare
 	aux_endereco BIGINT;
 	
 	begin
-		for i in 1..2 loop
+		for i in 1..200 loop
 			aux_nome := random_nome(numero(1) + 8);
 			aux_razao := random_nome(numero(1) + 10);
 			aux_email := aux_nome||email_random();
@@ -198,7 +192,6 @@ language plpgsql;
 
 table login;
 table empresa;
-table endereco;
 
 
 
@@ -211,7 +204,7 @@ declare
 	aux_cnpj BIGINT;
 	
 	begin
-		for i in 1..2 loop
+		for i in 1..400 loop
 			aux_nome := servico_random();
 			aux_desc := random_nome(numero(1) + 40);
 			aux_count := COUNT(*) FROM empresa;
@@ -224,12 +217,12 @@ declare
 end $$ 
 language plpgsql;
 
-table login;
-table empresa;
-table Servico;
+TABLE login;
+TABLE empresa;
+TABLE Servico;
 
 
--- Inserir Empresa
+-- Inserir Agenda
 do $$
 declare
 	aux_nome VARCHAR(20);
@@ -239,7 +232,7 @@ declare
 	aux_cnpj BIGINT;
 	
 	begin
-		for i in 1..2 loop
+		for i in 1..1200 loop
 			aux_nome := servico_random();
 			aux_desc := random_nome(numero(1) + 40);
 			
@@ -255,7 +248,13 @@ declare
 end $$ 
 language plpgsql;
 
-table login;
-table empresa;
-table Agenda;
+TABLE Agenda;
 
+
+-- 
+TABLE login;
+TABLE cliente;
+TABLE servico;
+TABLE empresa;
+TABLE endereco;
+TABLE Agenda;
