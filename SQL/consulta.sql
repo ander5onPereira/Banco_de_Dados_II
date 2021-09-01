@@ -22,3 +22,8 @@ SELECT * FROM endereco as EN
 INNER JOIN empresa as EM on EM.fk_endereco=EN.id_endereco
 INNER JOIN servico as SE on SE.fk_empresa=EM.cnpj
 WHERE EN.estado='jY' AND SE.tipo='Dentista';
+
+
+select fk_empresa from servico where nome='Desenvolvimento'; 
+
+select * from cliente where nome='vaer';
