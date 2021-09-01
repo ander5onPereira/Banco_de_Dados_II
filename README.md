@@ -109,8 +109,8 @@ O sistema de agendamento terá as seguintes funcionalidades previstas:
  - ~~Escolha uma aplicação que existam dados correlacionados e a descreva.~~
  - ~~Elabore um diagrama Entidade-Relacionamento para esta aplicação.~~
  - ~~Faça o mapeamento para o modelo relacional, indicando as restrições de integridade.~~
- - ~~Gere o Script de criac~ao de tabelas no PostgreSQL com as restrições.~~
- - ~~Popule as tabelas com alguns dados (prefer^encia reais, se possível), suficiente para consultas.~~
+ - ~~Gere o Script de criação de tabelas no PostgreSQL com as restrições.~~
+ - ~~Popule as tabelas com alguns dados (preferência reais, se possível), suficiente para consultas.~~
  - ~~Crie índices adequados às consultas, indicando as consultas que foram beneficiados, mostrando
 também o resultado do explain.~~
 - Crie 3 funções que representem consultas corriqueiras, ou realizem alguma tarefa nas tabelas.
