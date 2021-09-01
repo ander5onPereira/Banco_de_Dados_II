@@ -6,9 +6,11 @@ CREATE TABLE audit_agenda(
 	id_agenda BIGSERIAL,
 	data_antiga timestamp with time zone,
 	fk_cliente VARCHAR,
-	fk_empresa VARCHAR
+	fk_empresa VARCHAR,
+	fk_servico BIGINT references servico(id_servico),
 );
-DROP TABLE audit_agenda
+
+-- DROP TABLE audit_agenda;
 
 CREATE OR REPLACE FUNCTION process_agenda_audit()
 	RETURNS TRIGGER AS $agenda_audit$
