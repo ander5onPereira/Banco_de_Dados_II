@@ -23,7 +23,14 @@ INNER JOIN empresa as EM on EM.fk_endereco=EN.id_endereco
 INNER JOIN servico as SE on SE.fk_empresa=EM.cnpj
 WHERE EN.estado='jY' AND SE.tipo='Dentista';
 
-
+-- Buscar por empresas que forenecem serviço X --
 select fk_empresa from servico where nome='Desenvolvimento'; 
 
+-- Buscar clientes com nome X --
 select * from cliente where nome='vaer';
+
+-- Buscar ps clientes com agenda entre as datas --
+select * from cliente 
+inner join agenda on agenda.fk_cliente=cliente.cpf
+inner join empresa on agenda.fk_empresa=empresa.cnpj
+where agenda.data BETWEEN (NOW() - interval '1 year 7 month 11 day') and NOW();
