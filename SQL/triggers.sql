@@ -45,11 +45,10 @@ WHERE id_agenda = 4;
 
 
 UPDATE Agenda
-SET fk_cliente = 82646370273
-WHERE id_agenda = 3;
+SET fk_cliente = 83684665942
+WHERE id_agenda = 2;
 
 
 INSERT INTO Agenda (data, fk_cliente, fk_empresa)
-VALUES (data(), 82646370273, 35931081627105);
-
+VALUES (data(), 70519551169, 15011691814288);
 

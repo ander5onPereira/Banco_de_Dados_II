@@ -113,8 +113,8 @@ O sistema de agendamento terá as seguintes funcionalidades previstas:
  - ~~Popule as tabelas com alguns dados (preferência reais, se possível), suficiente para consultas.~~
  - ~~Crie índices adequados às consultas, indicando as consultas que foram beneficiados, mostrando
 também o resultado do explain.~~
-- Crie 3 funções que representem consultas corriqueiras, ou realizem alguma tarefa nas tabelas.
-- Crie 3 visões comuns e uma tabela de auditoria para um tabela.
+- ~~Crie 3 funções que representem consultas corriqueiras, ou realizem alguma tarefa nas tabelas.~~
+- ~~Crie 3 visões comuns e uma tabela de auditoria para um tabela.~~
 - Crie 3 triggers que tratem eventos em tabelas com atributos derivados e auditorias acima.
 
 </div>

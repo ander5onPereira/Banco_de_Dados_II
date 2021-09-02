@@ -1,13 +1,3 @@
--- VIEW SIMPLES
--- CREATE VIEW nome_view AS SELECT parameters, parameters FROM table
-
-
--- VIEW ROBUSTA
--- CREATE MATERIALIZED VIEW AS SELECT parameters, parameters FROM table
-
--- REFRESH MATERIALIZED VIEW [CONCURRENTLY] nomeview
-
--- 1° VIEW SIMPLES
 -- RETORNA A QUANTIDADE DE EMPRESAS QUE OFERECE O SERVICO
 CREATE VIEW qtdempresaservico AS
 SELECT 	nome,
@@ -16,7 +6,6 @@ FROM 	servico
 GROUP  BY nome; 
 
 
--- 2° VIEW SIMPLES
 -- RETORNA AS CARACTERISTICAS DO CLIENTE COM ENDERECO
 CREATE VIEW InfoCliente AS
 SELECT 	Concat(nome, ' ', sobrenome),
@@ -29,3 +18,13 @@ SELECT 	Concat(nome, ' ', sobrenome),
 FROM   	cliente
        	inner join endereco
                	ON cliente.fk_endereco = endereco.id_endereco; 
+
+
+-- RETORNA AS EMPRESAS QUE POSSUEM FILIAIS
+CREATE VIEW EmpFilias AS
+SELECT 	empresa.cnpj, 
+		COUNT(endereco.id_endereco) AS "qtd" 
+FROM 	empresa
+	INNER JOIN endereco ON empresa.fk_endereco = endereco.id_endereco
+	GROUP BY empresa.cnpj
+	HAVING COUNT(endereco.id_endereco) > 1;
