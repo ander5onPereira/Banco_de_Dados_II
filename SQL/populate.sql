@@ -41,7 +41,7 @@ $$language plpgsql;
 Create or replace function texto(tamanho integer) returns text as
 $$
 declare
-  chars text[] := '{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}';
+  chars text[] := '{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z}';
   result text := '';
   i integer := 0;
 begin
@@ -60,7 +60,7 @@ $$ language plpgsql;
 Create or replace function random_nome(tamanho decimal) returns text as
 $$
 declare
-  chars text[] := '{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}';
+  chars text[] := '{A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z}';
   result text := '';
   i integer := 0;
 begin
@@ -114,15 +114,15 @@ $$ language plpgsql;
 -- Inserir Endereco
 do $$
 declare
-	aux_numero INTEGER;
-	begin
-		for i in 1..2000 loop
-			aux_numero := trunc(random() * 14 + 1);
-			INSERT INTO endereco (cep, pais, estado, cidade, bairro, rua, complemento, numero)
-			VALUES ( numero(8), pais_random(), random_nome(2), random_nome(aux_numero), 
-							   random_nome(aux_numero), 
-							   random_nome(aux_numero), '' , numero(2));
-		end loop;
+aux_numero INTEGER;
+begin
+for i in 1..2000 loop
+	aux_numero := trunc(random() * 14 + 1);
+	INSERT INTO endereco (cep, pais, estado, cidade, bairro, rua, complemento, numero)
+	VALUES ( numero(8), pais_random(), random_nome(2), random_nome(aux_numero), 
+						random_nome(aux_numero), 
+						random_nome(aux_numero), '' , numero(2));
+end loop;
 end $$ 
 language plpgsql;
 

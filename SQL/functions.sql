@@ -13,11 +13,10 @@ BEGIN
 END
 $$ LANGUAGE plpgsql;
 DROP FUNCTION AgendaCliente
+-- SELECT * FROM AgendaCliente(cnpj);
 
-SELECT * FROM AgendaCliente('52157974615693');
 
-
--- Buscar ps clientes com agenda entre as datas --
+-- Buscar os clientes com agenda entre as datas --
 CREATE OR REPLACE FUNCTION AgendaData(dia VARCHAR, mes VARCHAR, ano VARCHAR, cnpj_search VARCHAR)
 RETURNS TABLE (nome_cliente VARCHAR, sobrenome VARCHAR, telefone TEXT[], email VARCHAR, cpf VARCHAR, data timestamp with time zone) as $$
 DECLARE 
@@ -36,11 +35,10 @@ BEGIN
 	where agenda.data BETWEEN (NOW() - mensagem::interval) AND NOW() AND empresa.cnpj = cnpj_search;
 END
 $$ LANGUAGE plpgsql;
+-- SELECT * FROM AgendaData(dia, mes, ano, cnpj)
 
-SELECT * FROM AgendaData('12', '7', '1', '46073098806664')
 
-
--- Buscar quantidade de clientes atendidos em um intervalo de da --
+-- Buscar quantidade de clientes atendidos em um intervalo de data --
 CREATE OR REPLACE FUNCTION QuantidadeCliente(dia VARCHAR, mes VARCHAR, ano VARCHAR)
 RETURNS TABLE (cnpj VARCHAR, quantidade_cliente BIGINT) as $$
 DECLARE 
@@ -55,5 +53,4 @@ BEGIN
 END
 $$ LANGUAGE plpgsql;
 DROP FUNCTION QuantidadeCliente;
-
-SELECT * FROM QuantidadeCliente('12', '7', '1')
+-- SELECT * FROM QuantidadeCliente(dia, mes, ano)

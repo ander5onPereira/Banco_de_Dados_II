@@ -1,6 +1,8 @@
+create index idxEmpresa on agenda(fk_empresa);
+
 create index idxEstado on endereco(estado);
 
-create index idxEmpresa on agenda(fk_empresa);
+create index idxCliente on agenda(fk_cliente);
 
 create index idxServico on agenda(fk_servico);
 

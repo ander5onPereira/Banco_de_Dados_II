@@ -4,7 +4,7 @@ CREATE TABLE login (
 	email VARCHAR(50) NOT NULL,
 	senha VARCHAR(15) NOT NULL,
 	permissao CHAR(2) NOT NULL,
-	constraint pk_login primary key (email)
+	constraint pk_login primary key (email),
 );
 -- CRIANDO TABLE ENDEREÇO
 CREATE TABLE endereco (
@@ -17,7 +17,7 @@ CREATE TABLE endereco (
 	rua VARCHAR(255),
 	complemento VARCHAR(255),
 	numero DECIMAL(8),
-	constraint pk_endereco primary key(id_endereco)
+	constraint pk_endereco primary key(id_endereco),
 );
 -- CRIANDO TABLE CLIENTE --
 CREATE TABLE cliente (
@@ -25,9 +25,9 @@ CREATE TABLE cliente (
 	nome VARCHAR(20) NOT NULL,
 	sobrenome VARCHAR(100),
 	telefone text[],
-	fk_login VARCHAR references login(email),
-	fk_endereco BIGINT references endereco(id_endereco),
-	constraint pk_cpf primary key(cpf)	
+	fk_login VARCHAR references login(email) ON DELETE CASCADE ON UPDATE CASCADE,
+	fk_endereco BIGINT references endereco(id_endereco) ON DELETE CASCADE ON UPDATE CASCADE,
+	constraint pk_cpf primary key(cpf),
 );
 
 -- CRIANDO TABLE EMPRESA --
@@ -37,9 +37,9 @@ CREATE TABLE empresa (
 	nome VARCHAR(50) NOT NULL,
 	razao_social VARCHAR(50) NOT NULL,
 	telefone text[],
-	fk_login VARCHAR references login(email),
-	fk_endereco BIGINT references endereco(id_endereco),
-	constraint pk_cnpj primary key(cnpj)
+	fk_login VARCHAR references login(email) ON DELETE CASCADE ON UPDATE CASCADE,
+	fk_endereco BIGINT references endereco(id_endereco) ON DELETE CASCADE ON UPDATE CASCADE,
+	constraint pk_cnpj primary key(cnpj),
 );
 
 -- CRIANDO TABLE SERVICO --
@@ -48,16 +48,16 @@ CREATE TABLE servico (
 	nome VARCHAR(255) NOT NULL,
 	tipo VARCHAR(150) NOT NULL,
 	descricao TEXT,
-	fk_empresa VARCHAR references empresa(cnpj),
-	constraint pk_servico primary key(id_servico)
+	fk_empresa VARCHAR references empresa(cnpj) ON DELETE CASCADE ON UPDATE CASCADE,
+	constraint pk_servico primary key(id_servico),
 );
 
 -- CRIANDO TABLE AGENDA --
 CREATE TABLE agenda (
 	id_agenda BIGSERIAL NOT NULL,
 	data timestamp with time zone NOT NULL,
-	fk_cliente VARCHAR references cliente(cpf),
-	fk_empresa VARCHAR references empresa(cnpj),
-	fk_servico BIGINT references servico(id_servico),
-	constraint pk_agenda primary key(id_agenda, data)
+	fk_cliente VARCHAR references cliente(cpf) ON DELETE CASCADE ON UPDATE CASCADE,
+	fk_empresa VARCHAR references empresa(cnpj) ON DELETE CASCADE ON UPDATE CASCADE,
+	fk_servico BIGINT references servico(id_servico) ON DELETE CASCADE ON UPDATE CASCADE,
+	constraint pk_agenda primary key(id_agenda, data),
 );
