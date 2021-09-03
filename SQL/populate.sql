@@ -143,7 +143,7 @@ declare
 			aux_endereco := id_endereco FROM endereco OFFSET floor(random()*aux_count) LIMIT 1;
 			
 			INSERT INTO Login (email, senha, permissao)
-			VALUES ( aux_email, texto(numero(1) + 4), numero(2))
+			VALUES ( aux_email, texto(numero(1) + 4), numero(1))
 			ON CONFLICT (email) DO NOTHING;
 			
 			
