@@ -145,9 +145,7 @@ declare
 			INSERT INTO Login (email, senha, permissao)
 			VALUES ( aux_email, texto(numero(1) + 4), numero(1))
 			ON CONFLICT (email) DO NOTHING;
-			
-			
-			
+					
 			INSERT INTO cliente (cpf, nome, sobrenome, telefone, fk_login, fk_endereco)
 			VALUES (numero_big(11), aux_nome, random_nome(numero(1)), ARRAY[numero(9)], aux_email, aux_endereco)
 			ON CONFLICT (cpf) DO NOTHING;
@@ -238,9 +236,9 @@ language plpgsql;
 
 
 -- Visualizar tabelas
-TABLE login;
-TABLE cliente;
-TABLE servico;
-TABLE empresa;
-TABLE endereco;
-TABLE Agenda;
+-- TABLE login;
+-- TABLE cliente;
+-- TABLE servico;
+-- TABLE empresa;
+-- TABLE endereco;
+-- TABLE Agenda;

@@ -38,20 +38,16 @@ FOR EACH ROW EXECUTE PROCEDURE process_agenda_audit();
 
 -- DROP TRIGGER agenda_audit ON Agenda
 
-TABLE agenda;
-TABLE audit_agenda;
+-- TABLE agenda;
+-- TABLE audit_agenda;
 
-DELETE FROM Agenda
-WHERE id_agenda = 4;
-
-
-UPDATE Agenda
-SET fk_cliente = 83684665942
-WHERE id_agenda = 2;
+-- DELETE FROM Agenda WHERE id_agenda = 4;
 
 
-INSERT INTO Agenda (data, fk_cliente, fk_empresa)
-VALUES (data(), 70519551169, 15011691814288);
+--UPDATE Agenda SET fk_cliente = 83684665942 WHERE id_agenda = 2;
+
+
+-- INSERT INTO Agenda (data, fk_cliente, fk_empresa) VALUES (data(), 70519551169, 15011691814288);
 
 
 -- 2° TRIGGER
@@ -82,15 +78,12 @@ CREATE TRIGGER login_audit
 AFTER UPDATE ON login
 FOR EACH ROW EXECUTE PROCEDURE process_audit_login();
 
-DROP TRIGGER login_audit ON login
+-- DROP TRIGGER login_audit ON login
 
-SELECT * FROM  login
-WHERE email = 'ijWqhydtDP@gmail.com';
-TABLE audit_login;
+-- SELECT * FROM  login WHERE email = 'ijWqhydtDP@gmail.com';
+-- TABLE audit_login;
 
-UPDATE Login
-SET senha = 'abacate'
-WHERE email = 'ijWqhydtDP@gmail.com';
+-- UPDATE Login SET senha = 'abacate' WHERE email = 'ijWqhydtDP@gmail.com';
 
 
 
@@ -130,50 +123,15 @@ CREATE TRIGGER cliente_audit
 AFTER INSERT OR UPDATE OR DELETE ON cliente
 FOR EACH ROW EXECUTE PROCEDURE process_audit_cliente();
 
-DROP TRIGGER cliente_audit ON cliente
+-- DROP TRIGGER cliente_audit ON cliente
 
-SELECT * FROM  cliente
-WHERE fk_login = 'ijWqhydtDP@gmail.com';
-TABLE audit_cliente;
+-- SELECT * FROM  cliente WHERE fk_login = 'ijWqhydtDP@gmail.com'; 
+-- TABLE audit_cliente;
 
-UPDATE cliente
-SET telefone[1] = 123456789
-WHERE fk_login = 'ijWqhydtDP@gmail.com';
+-- UPDATE cliente SET telefone[1] = 123456789 WHERE fk_login = 'ijWqhydtDP@gmail.com';
 
-INSERT INTO Cliente values (12345678911, 'abacate 2', 'abacaxi', ARRAY['123456789'], 'lyfHQn@gmail.com', 1688)
+-- INSERT INTO Cliente values (12345678911, 'abacate 2', 'abacaxi', ARRAY['123456789'], 'lyfHQn@gmail.com', 1688)
 
+-- DELETE FROM cliente WHERE fk_login = 'ijWqhydtDP@gmail.com'
 
-DELETE FROM cliente
-WHERE fk_login = 'ijWqhydtDP@gmail.com'
-
-select * from agenda
-where fk_cliente = '45294321794'
-
-
-table * from audit
-ALTER TABLE agenda
-MODIFY CONSTRAINTS ADD DELETE CASCADE and UPDATE CASCADE
-
-ALTER TABLE agenda
-ADD DELETE CASCADE
-
-TABLE audit_agenda
-
-ALTER TABLE agenda 
-  DROP CONSTRAINT agenda_fk_cliente_fkey;
-  
-ALTER TABLE agenda 
-  ADD CONSTRAINT agenda_fk_cliente_fkey
-  FOREIGN KEY (fk_cliente)
-  REFERENCES cliente(cpf)
-  ON DELETE CASCADE;
-  
-  
- ALTER TABLE agenda 
-  DROP CONSTRAINT  agenda_fk_empresa_fkey;
-
- ALTER TABLE agenda 
-  ADD CONSTRAINT agenda_fk_empresa_fkey
-  FOREIGN KEY (fk_empresa)
-  REFERENCES empresa(cnpj)
-  ON DELETE CASCADE;
+-- select * from agenda where fk_cliente = '45294321794'
